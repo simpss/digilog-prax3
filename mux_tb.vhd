@@ -32,16 +32,11 @@ Mux_comp: MUX port map (X, Y, CIn, COut, S);
 --Stimulus process
 Stimulus: process
    begin
-      X   <= '0'; 
-      Y   <= '0';
-      CIn <= '0';
-      wait for 10 ns;
-
-      X   <= '1'; 
-      Y   <= '1';
-      CIn <= '1';
-      wait for 10 ns;
-
+      X <= '0' after 0ns, '1' after 40ns, 'U' after 80ns;
+      Y <= '0' after 0ns, '1' after 20ns, '0' after 40ns, '1' after 60ns, 'U' after 80ns;
+      CIn <= '0' after 0ns, '1' after 10ns, '0' after 20ns, '1' after 30ns, '0' after 40ns, 
+             '1' after 50ns, '0' after 60ns, '1' after 70ns, 'U' after 80ns;
+      
       wait;  --Suspend
    end process Stimulus;
 
