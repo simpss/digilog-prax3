@@ -42,10 +42,11 @@ end process Stimulus;
 
 Assertions: process
    begin
+      wait for 5ns;
       assert (COut = '0')
          report "COut should be 0 at 5ns"
          severity WARNING;
-      wait for 5ns;
+      wait for 10ns;
       assert (COut = '0')
          report "COut should be 0 at 15ns"
          severity WARNING;
@@ -57,6 +58,23 @@ Assertions: process
       assert (COut = '1')
          report "COut should be 1 at 35ns"
          severity WARNING;
+      wait for 10ns;
+      assert (COut = '0')
+         report "COut should be 0 at 45ns"
+         severity WARNING;
+      wait for 10ns;
+      assert (COut = '1')
+         report "COut should be 1 at 55ns"
+         severity WARNING;
+      wait for 10ns;
+      assert (COut = '1')
+         report "COut should be 1 at 65ns"
+         severity WARNING;
+      wait for 10ns;
+      assert (COut = '1')
+         report "COut should be 1 at 75ns"
+         severity WARNING;
+      wait for 10ns;
       
       wait;  --Suspend
 end process Assertions;
