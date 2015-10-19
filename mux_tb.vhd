@@ -6,13 +6,13 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 --Testbench entity is always empty
-entity MuxTestBench is
-end MuxTestbench;
+entity AdderTestBench is
+end AdderTestBench;
 
-architecture Bench of MuxTestBench is
+architecture Bench of AdderTestBench is
 
   --Component declaration for MUX
-component Mux is --Copy of Mux Entity as a component
+component behave_adder is --Copy of Mux Entity as a component
   port ( X     : in std_logic;
          Y     : in std_logic;
          C_IN  : in std_logic;
@@ -27,7 +27,7 @@ component Mux is --Copy of Mux Entity as a component
 begin
 
 --Component instantiation of MUX
-Mux_comp: MUX port map (X, Y, CIn, COut, S);
+Mux_comp: BEHAVE_ADDER port map (X, Y, CIn, COut, S);
 
 --Stimulus process
 Stimulus: process
