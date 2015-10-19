@@ -46,35 +46,65 @@ Assertions: process
       assert (COut = '0')
          report "COut should be 0 at 5ns"
          severity WARNING;
+      assert (S = '0')
+         report "S should be 0 at 5ns"
+         severity WARNING;
       wait for 10ns;
+      
       assert (COut = '0')
          report "COut should be 0 at 15ns"
          severity WARNING;
+      assert (S = '1')
+         report "S should be 1 at 5ns"
+         severity WARNING;
       wait for 10ns;
+      
       assert (COut = '0')
          report "COut should be 0 at 25ns"
          severity WARNING;
+      assert (S = '1')
+         report "S should be 1 at 25ns"
+         severity WARNING;
       wait for 10ns;
+      
       assert (COut = '1')
          report "COut should be 1 at 35ns"
          severity WARNING;
+      assert (S = '0')
+         report "S should be 0 at 35ns"
+         severity WARNING;
       wait for 10ns;
+      
       assert (COut = '0')
          report "COut should be 0 at 45ns"
          severity WARNING;
+      assert (S = '1')
+         report "S should be 1 at 45ns"
+         severity WARNING;
       wait for 10ns;
+      
       assert (COut = '1')
          report "COut should be 1 at 55ns"
          severity WARNING;
+      assert (S = '0')
+         report "S should be 0 at 55ns"
+         severity WARNING;
       wait for 10ns;
+      
       assert (COut = '1')
          report "COut should be 1 at 65ns"
          severity WARNING;
+      assert (S = '0')
+         report "S should be 0 at 65ns"
+         severity WARNING;
       wait for 10ns;
+      
       assert (COut = '1')
          report "COut should be 1 at 75ns"
          severity WARNING;
-      wait for 10ns;
+      assert (S = '1')
+         report "S should be 1 at 75ns"
+         severity WARNING;
       
       wait;  --Suspend
 end process Assertions;
