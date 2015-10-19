@@ -25,21 +25,44 @@ end Mux;
 architecture RTL of Mux is
 	--Siin saab deklareerida abisignaale ja alamkomponente
 begin
-
 --everything will be async from here on out(after the begin), except processes, procedures and functions
+
 --DISP_MUX process
 DISP_MUX: process ( X, Y, C_IN, C_OUT, S ) 
 --Process parameters are called "sensitivity list". Defines what variable value changes does the process listen to.
 --Private variables for a process:
-variable counter :integer;
+variable truth :std_logic_vector( 2 downto 0 );
   begin
-    if C_IN = '1' then
-       C_OUT <= '0';
-       S <= '0';
-    else
-       C_OUT <= '1';
-       S <= '1';
-    end if;
+    truth := X & Y & C_IN;
+    case truth is
+       when "000" => 
+          C_OUT <= '0';
+          S <= '0';
+       when "001" => 
+          C_OUT <= '0';
+          S <= '1';
+       when "010" => 
+          C_OUT <= '0';
+          S <= '1';
+       when "011" => 
+          C_OUT <= '1';
+          S <= '0';
+       when "100" => 
+          C_OUT <= '0';
+          S <= '1';
+       when "101" => 
+          C_OUT <= '1';
+          S <= '0';
+       when "110" => 
+          C_OUT <= '1';
+          S <= '0';
+       when "111" => 
+          C_OUT <= '1';
+          S <= '1';
+       when others => 
+          C_OUT <= 'U';
+          S <= 'U';
+    end case;
   end process DISP_MUX;
                
 end RTL;
