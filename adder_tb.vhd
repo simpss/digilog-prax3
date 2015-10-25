@@ -11,22 +11,22 @@ end AdderTestBench;
 
 architecture Bench of AdderTestBench is
 	--Component declaration for MUX
-	component six_bit_adder is --Copy of Mux Entity as a component
+	component behave_adder is --Copy of Mux Entity as a component
 	  port ( X     : in std_logic;
 	         Y     : in std_logic;
 	         C_IN  : in std_logic;
 	         C_OUT : out  std_logic;
 	         S     : out std_logic;
 	       );
-	end component six_bit_adder;
+	end component behave_adder;
 	
 	--Local signal declarations
 	signal X, Y,CIn, COut, S : std_logic;  
 	
 	begin
 	
-	--Component instantiation of THREE_BIT_ADDER
-	Mux_comp: SIX_BIT_ADDER port map (X, Y, CIn, COut, S);
+	--Component instantiation of SIX_BIT_ADDER
+	Mux_comp: behave_adder port map (X, Y, CIn, COut, S);
 	
 	--Stimulus process
 	Stimulus: process
