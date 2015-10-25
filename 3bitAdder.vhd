@@ -20,7 +20,7 @@ architecture RTL of THREE_BIT_ADDER is
         SM_X     : in std_logic;
         SM_Y     : in std_logic;
         SM_C_IN  : in std_logic;
-        SM_C_OUT : in std_logic;
+        SM_C_OUT : out std_logic;
         SM_S     : out std_logic);
     end component behave_adder;
     
