@@ -15,7 +15,7 @@ architecture Bench of AdderTestBench is
 	  port ( X     : in std_logic;
 	         Y     : in std_logic;
 	         C_IN  : in std_logic;
-	         C_OUT : in  std_logic;
+	         C_OUT : out  std_logic;
 	         S     : out std_logic;
 	       );
 	end component six_bit_adder;

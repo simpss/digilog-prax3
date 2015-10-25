@@ -6,7 +6,7 @@ entity six_bit_adder is
      X     : in std_logic;
      Y     : in std_logic;
      C_IN  : in std_logic;
-     C_OUT : in  std_logic;
+     C_OUT : out  std_logic;
      S     : out std_logic
 	);
 end six_bit_adder;

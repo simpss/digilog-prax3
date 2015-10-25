@@ -10,7 +10,7 @@ entity behave_adder is
   port ( X     : in std_logic;
          Y     : in std_logic;
          C_IN  : in std_logic;
-         C_OUT : in  std_logic;
+         C_OUT : out  std_logic;
          S     : out std_logic;
        );
 end behave_adder;
