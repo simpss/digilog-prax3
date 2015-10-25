@@ -27,6 +27,7 @@ begin
 	--Private variables for a process:
 	--variable truth :std_logic_vector( 2 downto 0 );
 	  begin
-	    --do shit here
+	    S <= (X xor Y) xor C_IN;
+	    C_OUT <= (X and Y) or (X and C_IN) or (Y and C_IN);
 	  end process DISP_ADDER;     
 end RTL;
