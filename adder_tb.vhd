@@ -12,16 +12,18 @@ end AdderTestBench;
 architecture Bench of AdderTestBench is
 	--Component declaration for MUX
 	component six_bit_adder is --Copy of Mux Entity as a component
-	  port ( X     : in std_logic;
-	         Y     : in std_logic;
-	         C_IN  : in std_logic;
-	         C_OUT : out  std_logic;
-	         S     : out std_logic;
+	  port ( 
+		     X     : in std_logic_vector(5 downto 0);
+		     Y     : in std_logic_vector(5 downto 0);
+		     C_IN  : in std_logic;
+		     C_OUT : out  std_logic;
+		     S     : out std_logic_vector(5 downto 0)
 	       );
 	end component six_bit_adder;
 	
 	--Local signal declarations
-	signal X, Y,CIn, COut, S : std_logic;  
+	signal X, Y, S : std_logic_vector(5 downto 0);  
+	signal CIn, COut : std_logic;
 	
 	begin
 	
@@ -39,72 +41,5 @@ architecture Bench of AdderTestBench is
 	   wait;  --Suspend
 	end process Stimulus;
 	
-	Assertions: process
-	   begin
-	      wait for 5ns;
-	      assert (COut = '0')
-	         report "COut should be 0 at 5ns"
-	         severity WARNING;
-	      assert (S = '0')
-	         report "S should be 0 at 5ns"
-	         severity WARNING;
-	      wait for 10ns;
-	      
-	      assert (COut = '0')
-	         report "COut should be 0 at 15ns"
-	         severity WARNING;
-	      assert (S = '1')
-	         report "S should be 1 at 5ns"
-	         severity WARNING;
-	      wait for 10ns;
-	      
-	      assert (COut = '0')
-	         report "COut should be 0 at 25ns"
-	         severity WARNING;
-	      assert (S = '1')
-	         report "S should be 1 at 25ns"
-	         severity WARNING;
-	      wait for 10ns;
-	      
-	      assert (COut = '1')
-	         report "COut should be 1 at 35ns"
-	         severity WARNING;
-	      assert (S = '0')
-	         report "S should be 0 at 35ns"
-	         severity WARNING;
-	      wait for 10ns;
-	      
-	      assert (COut = '0')
-	         report "COut should be 0 at 45ns"
-	         severity WARNING;
-	      assert (S = '1')
-	         report "S should be 1 at 45ns"
-	         severity WARNING;
-	      wait for 10ns;
-	      
-	      assert (COut = '1')
-	         report "COut should be 1 at 55ns"
-	         severity WARNING;
-	      assert (S = '0')
-	         report "S should be 0 at 55ns"
-	         severity WARNING;
-	      wait for 10ns;
-	      
-	      assert (COut = '1')
-	         report "COut should be 1 at 65ns"
-	         severity WARNING;
-	      assert (S = '0')
-	         report "S should be 0 at 65ns"
-	         severity WARNING;
-	      wait for 10ns;
-	      
-	      assert (COut = '1')
-	         report "COut should be 1 at 75ns"
-	         severity WARNING;
-	      assert (S = '1')
-	         report "S should be 1 at 75ns"
-	         severity WARNING;
-	      
-	      wait;  --Suspend
-	end process Assertions;
+	
 end Bench;
