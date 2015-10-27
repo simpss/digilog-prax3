@@ -25,6 +25,6 @@ begin
 	--Private variables for a process:
 	variable truth :std_logic_vector( 2 downto 0 );
 	  begin
-	    
+	    Z <= X or Y;
 	  end process DISP_ADDER;     
 end RTL;
