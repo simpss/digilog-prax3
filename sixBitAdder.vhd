@@ -15,14 +15,14 @@ architecture structure of six_bit_adder is
  
 --component declaration
 component behave_adder is
-	port(
-        SM_X     : in std_logic;
-        SM_Y     : in std_logic;
-        SM_C_IN  : in std_logic;
-        SM_C_OUT : out std_logic;
-        SM_S     : out std_logic
-	);
-end component behave_adder;
+  port ( X     : in std_logic;
+         Y     : in std_logic;
+         C_IN  : in std_logic;
+         C_OUT : out  std_logic;
+         S     : out std_logic;
+       );
+end component;
+
  
 --signal declaration
 --signal out_1	:	std_logic;
@@ -32,11 +32,11 @@ begin
 	--component instantiation
 	sm_1	:	behave_adder
 		port map(
-			SM_X	=>	X,
-			SM_Y	=>	Y,
-			SM_C_IN	=>	C_IN,
-			SM_C_OUT => C_OUT,
-			SM_S	=>	S
+			X	=>	X,
+			Y	=>	Y,
+			C_IN	=>	C_IN,
+			C_OUT => C_OUT,
+			S	=>	S
 		);
  
 end structure;

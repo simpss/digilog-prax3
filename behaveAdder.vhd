@@ -22,7 +22,7 @@ begin
 	--everything will be async from here on out(after the begin), except processes, procedures and functions
 	
 	--DISP_ADDER process
-	DISP_ADDER: process ( X, Y, C_IN, C_OUT, S ) 
+	DISP_ADDER: process ( X, Y, C_IN ) 
 	--Process parameters are called "sensitivity list". Defines what variable value changes does the process listen to.
 	--Private variables for a process:
 	variable truth :std_logic_vector( 2 downto 0 );
