@@ -25,8 +25,8 @@ component behave_adder is
 end component behave_adder;
  
 --signal declaration
-signal out_1	:	std_logic;
-signal out_2	:	std_logic;
+--signal out_1	:	std_logic;
+--signal out_2	:	std_logic;
  
 begin
 	--component instantiation
